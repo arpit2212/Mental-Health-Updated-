@@ -39,6 +39,16 @@ const Chatbot = () => {
     // Initialize speech synthesis
     if (window.speechSynthesis) {
       speechSynthesisRef.current = window.speechSynthesis;
+      
+      // Force load voices - this can help with speech synthesis initialization
+      speechSynthesisRef.current.getVoices();
+      
+      // Add a listener for when voices are loaded (may be asynchronous in some browsers)
+      if (speechSynthesisRef.current.onvoiceschanged !== undefined) {
+        speechSynthesisRef.current.onvoiceschanged = () => {
+          console.log("Voices loaded:", speechSynthesisRef.current.getVoices().length);
+        };
+      }
     } else {
       console.error("Speech synthesis not supported");
       setSpeechSupported(false);
@@ -172,14 +182,6 @@ const Chatbot = () => {
 
   // Function to get response from Gemini API
   const getGeminiResponse = async (message) => {
-    if (!botReady) {
-      console.warn("Bot is not ready yet");
-      const errorMessage = "Sorry, I'm still getting ready. Please try again in a moment.";
-      setBotResponse(errorMessage);
-      speak(errorMessage);
-      return;
-    }
-    
     console.log("Getting Gemini response for:", message);
     setIsLoading(true);
     setApiError(null);
@@ -247,19 +249,25 @@ const Chatbot = () => {
       
       // Set the bot response to display it - ensure no markdown formatting is preserved
       setBotResponse(replyText.replace(/\*/g, ''));
-      speak(replyText.replace(/\*/g, ''));
+
+      // Call speak function after setting response
+      setTimeout(() => {
+        speak(replyText.replace(/\*/g, ''));
+      }, 100);
     } catch (error) {
       console.error("Error getting Gemini response:", error);
       setApiError(error.message);
-      setBotResponse("Sorry, I had trouble connecting to my brain. Please try again in a moment.");
+      const errorMessage = "Sorry, I had trouble connecting to my brain. Please try again in a moment.";
+      setBotResponse(errorMessage);
+      speak(errorMessage);
     } finally {
       setIsLoading(false);
     }
   };
 
-  // Text-to-speech function with better error handling
+  // Improved text-to-speech function with better error handling
   const speak = (text) => {
-    if (!speechSynthesisRef.current || !speechSupported) {
+    if (!speechSynthesisRef.current) {
       console.error("Speech synthesis not available");
       return;
     }
@@ -270,12 +278,34 @@ const Chatbot = () => {
       
       const utterance = new SpeechSynthesisUtterance(text);
       
-      // Try getting a specific voice
+      // Try getting a specific voice - improved voice selection
       const voices = speechSynthesisRef.current.getVoices();
+      console.log("Available voices:", voices.length);
+      
+      let selectedVoice = null;
+      
+      // Prioritize natural English voices
       const englishVoices = voices.filter(voice => voice.lang.includes('en'));
+      
+      // Try to get a good quality voice
       if (englishVoices.length > 0) {
-        utterance.voice = englishVoices[0];
+        // Prefer voices that are not "Google" (as they tend to be better quality)
+        const preferredVoice = englishVoices.find(voice => 
+          !voice.name.includes('Google') && voice.localService === false
+        );
+        
+        selectedVoice = preferredVoice || englishVoices[0];
       }
+      
+      if (selectedVoice) {
+        utterance.voice = selectedVoice;
+        console.log("Using voice:", selectedVoice.name);
+      }
+      
+      // Improve speech parameters
+      utterance.rate = 1.0; // Normal speed
+      utterance.pitch = 1.0; // Normal pitch
+      utterance.volume = 1.0; // Full volume
       
       // Add event listeners to monitor speech
       utterance.onstart = () => console.log("Speech started");
@@ -285,6 +315,7 @@ const Chatbot = () => {
         // Don't show errors to user for speech synthesis issues
       };
       
+      // Actually speak
       speechSynthesisRef.current.speak(utterance);
     } catch (error) {
       console.error("Error in speech synthesis:", error);
@@ -293,12 +324,8 @@ const Chatbot = () => {
 
   // Start listening to user speech with better error handling
   const listenUser = () => {
-    if (!botReady) {
-      const errorMessage = "Sorry, I'm still initializing. Please wait a moment.";
-      setBotResponse(errorMessage);
-      speak(errorMessage);
-      return;
-    }
+    // Remove the botReady check that was causing the issue
+    // The bot is already set to ready in the useEffect hook
     
     if (!speechSupported) {
       setBotResponse("Speech recognition is not supported in your browser. Please try using Chrome or Edge.");
@@ -501,6 +528,9 @@ const Chatbot = () => {
       status.push(`❌ Last API error: ${apiError}`);
     }
     
+    // Check botReady status
+    status.push(`🤖 Bot ready: ${botReady ? '✅ Yes' : '❌ No'}`);
+    
     // Check microphone permissions
     if (navigator.permissions && navigator.permissions.query) {
       navigator.permissions.query({ name: 'microphone' })
@@ -600,9 +630,9 @@ const Chatbot = () => {
                 <button 
                   className="start-convo-btn btn bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition-colors w-full"
                   onClick={handleStartConversation}
-                  disabled={!botReady || !geminiApiKey}
+                  disabled={!geminiApiKey}
                 >
-                  {!geminiApiKey ? "Missing API key" : botReady ? "Start Conversation" : "Loading..."}
+                  {!geminiApiKey ? "Missing API key" : "Start Conversation"}
                 </button>
               </div>
             ) : (

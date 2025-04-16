@@ -32,7 +32,7 @@ const HomePage = () => {
         {/* Illustration */}
         <div className="w-full lg:w-1/2 flex justify-center items-center h-full">
           <img
-            src="../../src/assets/images/HomePage/cominedilus.png"
+            src="images/HomePage/cominedilus.png"
             alt="Illustration"
             className="w-[300px] sm:w-[300px] md:w-[350px] lg:w-[500px] lg:ml-28 h-auto object-contain"
           />
