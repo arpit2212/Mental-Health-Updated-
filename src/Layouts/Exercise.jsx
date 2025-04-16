@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 // Access the API key from environment variables
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
@@ -184,6 +186,146 @@ const ExercisePlanner = () => {
     });
     setExercisePlan(null);
     setSelectedDay(0);
+  };
+
+  // PDF Generation Function
+  const generatePDF = () => {
+    // Create a new PDF document
+    const doc = new jsPDF();
+    
+    // Set fonts and add title
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(20);
+    doc.text("Your 7-Day Exercise Plan", 105, 20, { align: "center" });
+    
+    // Add user profile information
+    doc.setFontSize(12);
+    doc.setFont("helvetica", "normal");
+    doc.text("Fitness Profile:", 14, 35);
+    
+    doc.setFontSize(10);
+    doc.text(`Height: ${userData.height} cm | Weight: ${userData.weight} kg | Age: ${userData.age} | Gender: ${userData.gender}`, 14, 42);
+    doc.text(`Fitness Level: ${userData.fitnessLevel} | Goal: ${fitnessGoals.find(g => g.value === userData.goal)?.label}`, 14, 48);
+    
+    const equipment = userData.equipmentAccess.length > 0 
+      ? userData.equipmentAccess.map(eq => {
+          const option = equipmentOptions.find(opt => opt.id === eq);
+          return option ? option.label : eq;
+        }).join(", ")
+      : "no equipment";
+      
+    doc.text(`Available Time: ${userData.timePerDay} minutes daily | Equipment: ${equipment}`, 14, 54);
+    
+    if (userData.healthConditions) {
+      doc.text(`Health Considerations: ${userData.healthConditions}`, 14, 60);
+    }
+    
+    let yPosition = userData.healthConditions ? 70 : 64;
+    
+    // Add each day's exercise plan
+    if (exercisePlan && exercisePlan.length > 0) {
+      for (let i = 0; i < exercisePlan.length; i++) {
+        // Check if we need to add a new page
+        if (yPosition > 250) {
+          doc.addPage();
+          yPosition = 20;
+        }
+        
+        // Extract the day title/focus
+        const dayText = exercisePlan[i];
+        const dayTitleMatch = dayText.match(/day\s*(\d+):?\s*(.*?)(?=\n|$)/i);
+        const dayTitle = dayTitleMatch 
+          ? `Day ${dayTitleMatch[1]}${dayTitleMatch[2] ? ': ' + dayTitleMatch[2].toLowerCase() : ''}`
+          : `Day ${i+1}`;
+        
+        // Add day title
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(12);
+        doc.text(dayTitle, 14, yPosition);
+        yPosition += 6;
+        
+        // Clean the text for PDF
+        let cleanText = dayText
+          .replace(/day\s*\d+:?\s*.*?\n/i, '') // Remove the day title as we've already added it
+          .replace(/<[^>]*>/g, '') // Remove any HTML tags
+          .replace(/\*+/g, '') // Remove asterisks
+          .trim();
+        
+        // Format the text for PDF
+        const sections = cleanText.split(/\b(warm-up|warm up|main workout|cool-down|cool down|stretching|mental wellness tip)(?:\s*:|\s*\n)/i);
+        
+        for (let j = 0; j < sections.length; j++) {
+          // Check if we need to add a new page
+          if (yPosition > 270) {
+            doc.addPage();
+            yPosition = 20;
+          }
+          
+          const section = sections[j].trim();
+          
+          if (section.match(/\b(warm-up|warm up|main workout|cool-down|cool down|stretching|mental wellness tip)/i)) {
+            // This is a section heading
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(10);
+            doc.text(section.toLowerCase(), 14, yPosition);
+            yPosition += 5;
+          } else if (section.length > 0) {
+            // This is section content
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(9);
+            
+            // Split text into lines/paragraphs
+            const lines = section.split('\n');
+            lines.forEach(line => {
+              const trimmedLine = line.trim();
+              if (trimmedLine.length > 0) {
+                // Check if we need to add a new page
+                if (yPosition > 270) {
+                  doc.addPage();
+                  yPosition = 20;
+                }
+                
+                // Format exercise names if present
+                if (trimmedLine.match(/sets\/duration|form guide|intensity/i)) {
+                  // This is an exercise detail, indent it
+                  const splitIndex = trimmedLine.indexOf(':');
+                  if (splitIndex > -1) {
+                    const label = trimmedLine.substring(0, splitIndex + 1);
+                    const content = trimmedLine.substring(splitIndex + 1);
+                    
+                    doc.setFont("helvetica", "bold");
+                    doc.text(label.toLowerCase(), 18, yPosition);
+                    doc.setFont("helvetica", "normal");
+                    doc.text(content.toLowerCase(), 18 + doc.getTextWidth(label), yPosition);
+                  } else {
+                    doc.text(trimmedLine.toLowerCase(), 18, yPosition);
+                  }
+                } else {
+                  doc.text(trimmedLine.toLowerCase(), 14, yPosition);
+                }
+                
+                yPosition += 5;
+              }
+            });
+            
+            yPosition += 3; // Add some space after each section
+          }
+        }
+        
+        yPosition += 8; // Add space between days
+      }
+    }
+    
+    // Add footer
+    const pageCount = doc.internal.getNumberOfPages();
+    for (let i = 1; i <= pageCount; i++) {
+      doc.setPage(i);
+      doc.setFontSize(8);
+      doc.text(`mindful movement - your personalized exercise plan - page ${i} of ${pageCount}`, 105, 290, { align: "center" });
+    }
+    
+    // Save the PDF
+    doc.save("mindful-movement-7-day-exercise-plan.pdf");
   };
 
   // Updated formatting function for lowercase text and smaller sizing
@@ -518,7 +660,7 @@ const ExercisePlanner = () => {
                         <p className="text-xs text-gray-600">
                           <span className="font-medium text-teal-600">equipment:</span><br />
                           <span className="text-gray-700">
-                            {userData.equipmentAccess.length > 0 
+                          {userData.equipmentAccess.length > 0 
                               ? userData.equipmentAccess.map(eq => {
                                   const option = equipmentOptions.find(opt => opt.id === eq);
                                   return option ? option.label : eq;
@@ -536,6 +678,19 @@ const ExercisePlanner = () => {
                         </p>
                       </div>
                     )}
+                  </div>
+                  
+                  {/* Download PDF button */}
+                  <div className="flex justify-end mb-4">
+                    <button
+                      onClick={generatePDF}
+                      className="flex items-center bg-teal-50 hover:bg-teal-100 text-teal-600 text-xs font-medium py-2 px-4 rounded border border-teal-200 transition duration-300 focus:outline-none focus:ring-1 focus:ring-teal-400"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      download 7-day plan as pdf
+                    </button>
                   </div>
                   
                   {/* Day tabs navigation */}

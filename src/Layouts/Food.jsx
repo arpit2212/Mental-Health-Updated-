@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import axios from 'axios';
+import html2pdf from 'html2pdf.js';
 
 // Access the API key from environment variables
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
@@ -22,6 +23,9 @@ const MealPlanner = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [selectedDay, setSelectedDay] = useState(0);
+  
+  // Ref for PDF content
+  const pdfRef = useRef(null);
 
   // Dietary preferences options
   const dietaryOptions = [
@@ -269,7 +273,6 @@ const MealPlanner = () => {
     if (!dietPlan || dietPlan.length === 0) return null;
     
     const numDays = dietPlan.length > 7 ? 7 : dietPlan.length;
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     
     return (
       <div className="flex overflow-x-auto space-x-1 mb-4 pb-2 border-b border-gray-200">
@@ -287,6 +290,108 @@ const MealPlanner = () => {
         ))}
       </div>
     );
+  };
+
+  // Create PDF function
+  const generatePDF = () => {
+    if (!dietPlan) return;
+
+    // Create a new element for PDF content
+    const pdfContent = document.createElement('div');
+    pdfContent.classList.add('pdf-content');
+    pdfContent.style.padding = '20px';
+    pdfContent.style.fontFamily = 'Arial, sans-serif';
+
+    // Add header
+    const header = document.createElement('div');
+    header.innerHTML = `
+      <h1 style="text-align: center; color: #0d9488; margin-bottom: 20px; font-size: 24px;">7-Day Personalized Meal Plan</h1>
+      <div style="background-color: #f0fdfa; border-radius: 8px; padding: 15px; margin-bottom: 20px;">
+        <p><strong>Daily Calorie Target:</strong> ~${calculateCalories()} calories</p>
+        ${userData.dietaryPreferences.length > 0 ? 
+          `<p><strong>Dietary Preferences:</strong> ${userData.dietaryPreferences.map(pref => {
+            const option = dietaryOptions.find(opt => opt.id === pref);
+            return option ? option.label : pref;
+          }).join(", ")}</p>` : ''}
+        <p><strong>Created for:</strong> ${userData.gender === 'female' ? 'Female' : userData.gender === 'male' ? 'Male' : 'Other'}, ${userData.age} years, ${userData.height} cm, ${userData.weight} kg</p>
+        <p><strong>Activity level:</strong> ${userData.activityLevel}</p>
+        <p><strong>Goal:</strong> ${userData.goal === 'lose' ? 'Weight loss' : userData.goal === 'gain' ? 'Weight gain' : 'Weight maintenance'}</p>
+      </div>
+    `;
+    pdfContent.appendChild(header);
+
+    // Add each day's meal plan
+    dietPlan.forEach((day, index) => {
+      const dayElement = document.createElement('div');
+      dayElement.style.pageBreakInside = 'avoid';
+      dayElement.style.marginBottom = '30px';
+      
+      // Convert HTML formatting to simpler formatting for PDF
+      let dayContent = day
+        .replace(/DAY\s*(\d+):?\s*(.*?)(?=\n|$)/i, (match, day, title) => {
+          return `<h2 style="font-size: 20px; color: #0d9488; border-bottom: 2px solid #0d9488; padding-bottom: 8px; margin-bottom: 16px;">DAY ${day}${title ? ': ' + title.toUpperCase() : ''}</h2>`;
+        });
+      
+      // Format meal titles
+      dayContent = dayContent.replace(/\b(BREAKFAST|LUNCH|DINNER|SNACK(?:\s\d+|)|MORNING SNACK|AFTERNOON SNACK|EVENING SNACK)(?:\s*:|\s*\n)/gi, 
+        match => `<h3 style="font-size: 18px; color: #0f766e; margin-top: 16px; margin-bottom: 8px;">${match.replace(/:/g, '').trim().toUpperCase()}</h3>`);
+      
+      // Format meal names
+      dayContent = dayContent.replace(/([A-Z][A-Z\s&-]+)(?=\s*\n|\s*Ingredients)/g, 
+        match => `<div style="font-weight: bold; color: #374151; margin-bottom: 8px;">${match.trim()}</div>`);
+      
+      // Format "Ingredients:" label and content
+      dayContent = dayContent.replace(/\b(Ingredients|Ingredients:)\s*(.*?)(?=\bCalories|\bMental Health|\n\n|\n[A-Z]|$)/gi, 
+        (match, label, content) => 
+          `<div style="margin-bottom: 4px;"><span style="font-weight: 600; color: #4b5563;">Ingredients:</span> ${content.trim()}</div>`);
+      
+      // Format "Calories:" label and value
+      dayContent = dayContent.replace(/\b(Calories|Calories:)\s*(\d+)(\s*kcal)?/gi, 
+        (match, label, value, unit) => 
+          `<div style="margin-bottom: 4px;"><span style="font-weight: 600; color: #4b5563;">Calories:</span> <span style="color: #0d9488; font-weight: 500;">${value}${unit || ' kcal'}</span></div>`);
+      
+      // Format "Mental Health Benefits:" or "Key Nutrients:" label and content
+      dayContent = dayContent.replace(/\b(Key Nutrients|Key Nutrients:|Mental Health Benefits|Mental Health Benefits:)\s*(.*?)(?=\n\n|\n[A-Z]|$)/gi, 
+        (match, label, content) => 
+          `<div style="margin-bottom: 12px;"><span style="font-weight: 600; color: #4b5563;">Mental Health Benefits:</span> ${content.trim()}</div>`);
+      
+      // Add spacing between sections
+      dayContent = dayContent.replace(/\n\n/g, '<div style="margin: 12px 0;"></div>');
+      
+      dayElement.innerHTML = dayContent;
+      pdfContent.appendChild(dayElement);
+      
+      // Add page break after each day except the last one
+      if (index < dietPlan.length - 1) {
+        const pageBreak = document.createElement('div');
+        pageBreak.style.pageBreakAfter = 'always';
+        pageBreak.style.height = '10px';
+        pdfContent.appendChild(pageBreak);
+      }
+    });
+
+    // Add footer
+    const footer = document.createElement('div');
+    footer.style.marginTop = '30px';
+    footer.style.borderTop = '1px solid #e2e8f0';
+    footer.style.paddingTop = '15px';
+    footer.style.textAlign = 'center';
+    footer.style.color = '#6b7280';
+    footer.style.fontSize = '14px';
+    footer.innerHTML = `<p>This meal plan was generated to support both physical and mental wellbeing.</p>
+      <p>© ${new Date().getFullYear()} Mindful Nutrition - Generated on ${new Date().toLocaleDateString()}</p>`;
+    pdfContent.appendChild(footer);
+    
+    // Generate the PDF
+    const pdfOptions = {
+      margin: 15,
+      filename: '7-Day-Meal-Plan.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+    
+    html2pdf().from(pdfContent).set(pdfOptions).save();
   };
 
   return (
@@ -489,7 +594,7 @@ const MealPlanner = () => {
                   {renderDayTabs()}
                   
                   {/* Render the selected day's meal plan with enhanced styling */}
-                  <div className="bg-white rounded-lg p-4">
+                  <div className="bg-white rounded-lg p-4" ref={pdfRef}>
                     {dietPlan && dietPlan[selectedDay] && (
                       <div 
                         className="prose max-w-none"
@@ -498,6 +603,19 @@ const MealPlanner = () => {
                         }}
                       />
                     )}
+                  </div>
+                  
+                  {/* Download PDF Button */}
+                  <div className="mt-6 flex justify-center">
+                    <button
+                      onClick={generatePDF}
+                      className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m-9 3h8m-8 0V7a4 4 0 018 0v3" />
+                      </svg>
+                      Download 7-Day Meal Plan (PDF)
+                    </button>
                   </div>
                   
                   <div className="mt-8 p-4 bg-blue-50 rounded-lg">
@@ -510,8 +628,8 @@ const MealPlanner = () => {
                   </div>
                 </div>
               )}
-            </div>
           </div>
+        </div>
 
           {/* If no form submitted yet, show illustration */}
           {!userData.submitted && (
