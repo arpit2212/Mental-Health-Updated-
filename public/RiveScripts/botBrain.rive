@@ -1,0 +1,461 @@
+! version = 2.0
+
+
+////////////////////////////////////////////////////////////////////
+////               SUBSTITUITION FOR SHORTHAND WORDS            ////
+////////////////////////////////////////////////////////////////////
+
+
+! sub we'd      = we would
+! sub we're     = we are
+! sub we've     = we have
+! sub we'll     = we will
+! sub whats     = what is
+! sub what's    = what is
+! sub what're   = what are
+! sub what've   = what have
+! sub what'll   = what will
+! sub can't     = can not
+! sub whos      = who is
+! sub who's     = who is
+! sub who'd     = who would
+! sub who'll    = who will
+! sub don't     = do not
+! sub didn't    = did not
+! sub it's      = it is
+! sub i'm       = i am
+! sub i'd       = i would
+! sub i've      = i have
+! sub i'll      = i will
+! sub don't     = do not
+! sub isn't     = is not
+! sub you'd     = you would
+! sub you're    = you are
+! sub you've    = you have
+! sub you'll    = you will
+! sub he'd      = he would
+! sub he's      = he is
+! sub he'll     = he will
+! sub she'd     = she would
+! sub she's     = she is
+! sub she'll    = she will
+! sub they'd    = they would
+! sub they're   = they are
+! sub they've   = they have
+! sub they'll   = they will
+! sub could've  = could have
+! sub couldn't  = could not
+! sub should've = should have
+! sub shouldn't = should not
+! sub would've  = would have
+! sub wouldn't  = would not
+! sub when's    = when is
+! sub when're   = when are
+! sub when'd    = when did
+! sub im        = i am
+! sub wat       = what
+! sub wats      = what is
+! sub ohh       = oh
+! sub becuse    = because
+! sub becasue   = because
+! sub becuase   = because
+! sub practise  = practice
+! sub its a     = it is a
+! sub fav       = favorite
+! sub fave      = favorite
+! sub yesi      = yes i
+! sub yetit     = yet it
+! sub iam       = i am
+! sub welli     = well i
+! sub wellit    = well it
+! sub amfine    = am fine
+! sub aman      = am an
+! sub amon      = am on
+! sub amnot     = am not
+! sub realy     = really
+! sub iamusing  = i am using
+! sub amleaving = am leaving
+! sub yuo       = you
+! sub youre     = you are
+! sub didnt     = did not
+! sub ain't     = is not
+! sub aint      = is not
+! sub wanna     = want to
+! sub gonna     = going to
+! sub gimme     = give me
+! sub gotta     = got to
+! sub lemme     = let me
+! sub cuz       = because
+! sub cause     = because
+
+
+////////////////////////////////////////////////////////////////////
+////                     GENERAL THINGS                         ////
+////////////////////////////////////////////////////////////////////
+
+
++*
+- I'm not entirely sure what you meant. Could you please rephrase that? I'm here to support you with your mental health concerns and would love to understand how I can help.
+- I didn't quite catch that. Could you please say it differently? I want to make sure I understand so I can provide the best support for your mental well-being.
+- I'm sorry, I didn't understand what you said. Could you try expressing that in a different way? I'm here to listen and help with whatever you're going through.
+
+
++ (hello|hi|hey|howdy|hola|hai|yo) 
+- <star>, I'm so glad you're reaching out today. How are you feeling? Remember that taking this step to talk about your mental health is already a positive action. I'm here to listen and support you however I can.
+- <star> there! Thank you for connecting with me today. How have you been feeling lately? I'm here as a supportive space for you to explore your thoughts and feelings. If you're struggling with anything in particular, I'd be happy to talk through it with you.
+- <star>! It's wonderful to see you. How has your mental well-being been recently? I'm here to provide a judgment-free space where you can express yourself. Would you like to talk about anything specific today, or would you prefer some general wellness tips?
+- <star>, I appreciate you reaching out. How are you doing today? Remember that your mental health matters, and it's important to give yourself the same care and attention you would give to others. I'm here to help with that journey.
+
+
++ what you do
+- I'm designed to be a supportive companion for your mental health journey. I can listen to your concerns, provide coping strategies for various mental health challenges, offer relaxation techniques, and guide you through difficult emotions. While I'm here to support you, please remember I'm not a replacement for professional help. If you're experiencing severe symptoms, I always recommend speaking with a licensed mental health professional who can provide personalized treatment.
+- I'm here to provide mental health support in a few different ways. I can be someone to talk to when you're feeling overwhelmed, suggest evidence-based coping strategies for anxiety and depression, share mindfulness exercises, or simply be a non-judgmental presence when you need to express yourself. However, I should mention that for serious mental health concerns, it's always best to consult with a psychiatrist or therapist who can offer personalized professional care.
+- My purpose is to support your mental wellbeing through conversation and helpful resources. I can discuss various aspects of mental health, suggest self-care activities, provide information about common mental health conditions, and offer a safe space to express your feelings. That said, I always encourage seeking professional help for persistent or severe mental health issues, as a qualified therapist or psychiatrist can provide the specialized care you deserve.
+
+
++ what can you do
+- I'm designed to be a supportive companion for your mental health journey. I can listen to your concerns, provide coping strategies for various mental health challenges, offer relaxation techniques, and guide you through difficult emotions. While I'm here to support you, please remember I'm not a replacement for professional help. If you're experiencing severe symptoms, I always recommend speaking with a licensed mental health professional who can provide personalized treatment.
+- I'm here to provide mental health support in a few different ways. I can be someone to talk to when you're feeling overwhelmed, suggest evidence-based coping strategies for anxiety and depression, share mindfulness exercises, or simply be a non-judgmental presence when you need to express yourself. However, I should mention that for serious mental health concerns, it's always best to consult with a psychiatrist or therapist who can offer personalized professional care.
+- My purpose is to support your mental wellbeing through conversation and helpful resources. I can discuss various aspects of mental health, suggest self-care activities, provide information about common mental health conditions, and offer a safe space to express your feelings. That said, I always encourage seeking professional help for persistent or severe mental health issues, as a qualified therapist or psychiatrist can provide the specialized care you deserve.
+
+
++ what [*] you do
+- I'm designed to be a supportive companion for your mental health journey. I can listen to your concerns, provide coping strategies for various mental health challenges, offer relaxation techniques, and guide you through difficult emotions. While I'm here to support you, please remember I'm not a replacement for professional help. If you're experiencing severe symptoms, I always recommend speaking with a licensed mental health professional who can provide personalized treatment.
+- I'm here to provide mental health support in a few different ways. I can be someone to talk to when you're feeling overwhelmed, suggest evidence-based coping strategies for anxiety and depression, share mindfulness exercises, or simply be a non-judgmental presence when you need to express yourself. However, I should mention that for serious mental health concerns, it's always best to consult with a psychiatrist or therapist who can offer personalized professional care.
+- My purpose is to support your mental wellbeing through conversation and helpful resources. I can discuss various aspects of mental health, suggest self-care activities, provide information about common mental health conditions, and offer a safe space to express your feelings. That said, I always encourage seeking professional help for persistent or severe mental health issues, as a qualified therapist or psychiatrist can provide the specialized care you deserve.
+
+
++ [*] how are you 
+- I'm doing well, thank you for asking. More importantly, how are you feeling today? Remember that it's okay to not be okay sometimes, and sharing how you feel can be the first step toward feeling better. I'm here to listen without judgment if you'd like to talk about anything that's been on your mind.
+- I'm well, thanks for your concern. But I'd really like to know how you're doing. Mental health is a journey with ups and downs - have you been experiencing any particular challenges lately? Or perhaps you've had some positive moments worth celebrating? I'm here to support you through all of it.
+- I'm fine, but I'm much more interested in how you're doing right now. How has your mental wellbeing been recently? Have you been practicing any self-care or coping strategies that help you? If you're struggling with something, please know this is a safe space to discuss it, and if needed, I can suggest resources for professional support.
+- I'm good, though what matters most is how you're feeling. Mental health affects every aspect of our lives, from our physical wellbeing to our relationships. Have you been noticing any patterns in your mood or energy levels lately? I'm here to listen and support you however I can.
+
+
++ how are you 
+- I'm doing well, thank you for asking. More importantly, how are you feeling today? Remember that it's okay to not be okay sometimes, and sharing how you feel can be the first step toward feeling better. I'm here to listen without judgment if you'd like to talk about anything that's been on your mind.
+- I'm well, thanks for your concern. But I'd really like to know how you're doing. Mental health is a journey with ups and downs - have you been experiencing any particular challenges lately? Or perhaps you've had some positive moments worth celebrating? I'm here to support you through all of it.
+- I'm fine, but I'm much more interested in how you're doing right now. How has your mental wellbeing been recently? Have you been practicing any self-care or coping strategies that help you? If you're struggling with something, please know this is a safe space to discuss it, and if needed, I can suggest resources for professional support.
+- I'm good, though what matters most is how you're feeling. Mental health affects every aspect of our lives, from our physical wellbeing to our relationships. Have you been noticing any patterns in your mood or energy levels lately? I'm here to listen and support you however I can.
+
+
++ fine
+- I'm glad to hear you're doing fine. Sometimes "fine" can mean different things to different people. If you'd like to share more about what's going on in your life or any specific challenges you're facing with your mental health, I'm here to listen. Remember that it's perfectly okay to have good days and bad days - that's part of being human.
+- That's good to hear. "Fine" can sometimes be a word we use when we don't want to get into details, and that's completely okay. If at any point you want to talk more deeply about how you're really feeling, or if there are specific aspects of your mental wellbeing you'd like to work on, I'm here for that conversation. In the meantime, have you done anything nice for yourself today?
+- I'm happy you're feeling fine. Taking a moment to check in with yourself about how you're really feeling is an important part of mental health care. If "fine" means you're genuinely doing well, that's wonderful! If there are areas where you could use some support or strategies to feel even better, I'd be happy to explore those with you whenever you're ready.
+
+
+////////////////////////////////////////////////////////////////////
+////                     MENTAL HEALTH CRISIS                   ////
+////////////////////////////////////////////////////////////////////
+
+
++ [*] (kill myself|end my life|commit suicide|take my life|don't want to live|want to die|ending it all) [*]
+- I'm truly concerned about what you're expressing right now. These thoughts are serious, and you deserve immediate support. Please call a crisis hotline right away - in the US, the Suicide Prevention Lifeline is available 24/7 at 988 or 1-800-273-8255. You can also text HOME to 741741 to reach the Crisis Text Line. These trained professionals can provide the immediate support you need. Your life matters tremendously, and these difficult feelings can improve with proper help.
+- I'm really worried about you right now. What you're experiencing is a mental health emergency that requires immediate professional attention. Please reach out to emergency services (911 in the US) or go to your nearest emergency room. Alternatively, call the National Suicide Prevention Lifeline at 988 or 1-800-273-8255 right away. They have trained counselors available 24/7 who know exactly how to help with what you're going through. Please make that call - your life is precious and irreplaceable.
+- I need you to know that these thoughts are often symptoms of conditions that can be treated. Right now, the most important thing is your safety. Please contact a crisis service immediately - call 988 or 1-800-273-8255 (US National Suicide Prevention Lifeline), text HOME to 741741 (Crisis Text Line), or go to your nearest emergency room. A mental health professional can help you work through these feelings and find solutions that don't involve harm. You deserve support and care right now.
+
+
++ [*] suicide [*]
+- Suicide is a very serious topic, and I want to address it with the care it deserves. If you or someone you know is experiencing suicidal thoughts, please know that immediate professional help is available. The National Suicide Prevention Lifeline (988 or 1-800-273-8255) provides 24/7 support. A trained mental health professional, like a psychiatrist or therapist, can provide proper assessment and care tailored to specific needs. Would you like to talk more about what's bringing this topic up for you today?
+- I notice you've mentioned suicide, which is something I take very seriously. If you're having thoughts of harming yourself, please reach out to emergency services (911 in the US) or a crisis hotline like the National Suicide Prevention Lifeline at 988 or 1-800-273-8255 immediately. These thoughts are often symptoms of treatable mental health conditions, and speaking with a psychiatrist or therapist can help identify effective strategies for recovery. Is there something specific about this topic you'd like to discuss?
+- Thank you for bringing up this important subject. Suicidal thoughts are medical emergencies that require professional intervention. If you're experiencing these thoughts, please contact a crisis service immediately - either call 988/1-800-273-8255 or text HOME to 741741. Mental health professionals like psychiatrists and psychologists have specific training to help people through these difficult moments and can provide the treatment needed to help these thoughts subside. Would you feel comfortable sharing what prompted this conversation today?
+
+
++ [*] (harm myself|hurt myself|cutting|self harm|self-harm) [*]
+- I'm concerned about what you're sharing regarding self-harm. These urges can be incredibly difficult to manage alone, and you deserve professional support. I strongly encourage you to speak with a mental health professional like a therapist or psychiatrist who can provide evidence-based treatments specifically for self-harm behaviors. In the meantime, some alternatives to consider include: holding ice in your hand, drawing on your skin with a red marker, vigorous exercise, or calling a crisis line like the Crisis Text Line (text HOME to 741741) to talk through the urges until they pass.
+- Self-harm is often a way of coping with intense emotional pain, and I want you to know that there are healthier alternatives that can provide relief. It's really important that you connect with a psychiatrist or therapist who specializes in this area - they can help identify triggers and develop personalized coping strategies. Some immediate alternatives to consider when urges arise include: snapping a rubber band on your wrist, screaming into or punching a pillow, taking a cold shower, or calling a supportive person. Most importantly, please know that you're not alone and recovery is absolutely possible with proper support.
+- Thank you for trusting me with this. Self-harm behaviors are serious and indicate significant emotional distress that deserves professional attention. I strongly recommend speaking with a psychiatrist or therapist who can provide proper assessment and treatment. They might suggest approaches like Dialectical Behavior Therapy (DBT), which is very effective for developing healthier emotional regulation skills. While working with a professional, you might try distraction techniques when urges arise: intense physical activity, holding an ice cube, listening to music that matches your mood, or calling a crisis line for in-the-moment support.
+
+
++ [*] (eating disorder|anorexia|bulimia|binge eating|purging) [*]
+- Eating disorders are serious mental health conditions that require specialized professional care. What you're experiencing is not your fault, and recovery is possible with proper treatment. I strongly encourage you to speak with both a psychiatrist and a registered dietitian who specializes in eating disorders. Early intervention significantly improves outcomes. Organizations like the National Eating Disorders Association (NEDA) offer resources and a helpline (1-800-931-2237) that can connect you with specialists in your area. Would you like to talk more about what you've been experiencing?
+- I appreciate you sharing something so personal about your relationship with food and body image. Eating disorders are complex mental health conditions that typically require a team approach to treatment, including a psychiatrist, therapist, and nutritionist who specialize in this area. The recovery journey can be challenging but is absolutely possible with proper support. The NEDA helpline (1-800-931-2237) can provide resources specific to your situation. In the meantime, would it help to discuss some smaller steps you might take toward seeking help?
+- Thank you for trusting me with this information about your eating behaviors. Eating disorders affect both physical and mental health and should be addressed by healthcare professionals with expertise in this area. A psychiatrist can help determine if medication might be helpful, while a therapist can work with you on the psychological aspects. Many people find that specialized treatment programs offer the comprehensive support needed for recovery. Would you feel comfortable reaching out to your doctor as a first step toward getting specialized help?
+
+
++ [*] (addict|addiction|alcoholic|alcoholism|substance abuse|drug problem) [*]
+- Addiction is a medical condition that affects brain function and behavior, not a moral failing or lack of willpower. Recovery is absolutely possible with proper treatment. Speaking with a psychiatrist who specializes in addiction medicine can be an important first step - they can evaluate whether medication-assisted treatment might be helpful and recommend appropriate therapy approaches. Support groups like AA, NA, or SMART Recovery also provide community and accountability that many find essential for recovery. Would you like to talk more about what you've been experiencing?
+- Thank you for sharing something so personal. Addiction treatment has come a long way, and we now know that a combination of medical treatment, therapy, and support works best for most people. A psychiatrist can provide a proper diagnosis and medication if appropriate, while therapists specializing in addiction can help address underlying causes and develop coping strategies. Professional treatment significantly increases chances of recovery. Would it help to discuss some options for finding specialists in your area?
+- I appreciate your openness about addiction struggles. This is a health condition that responds well to proper treatment, and seeking help is a sign of strength. A psychiatrist or addiction medicine specialist can provide a comprehensive evaluation and treatment plan that might include therapy, medication, support groups, and lifestyle changes. The SAMHSA helpline (1-800-662-4357) can provide referrals to local treatment facilities and information. Would you feel comfortable reaching out to a professional for an assessment of your specific situation?
+
+
++ [*] (panic attack|anxiety attack) [*]
+- Panic attacks can be incredibly frightening, but they're not dangerous even though they can feel that way. When one occurs, try this grounding technique: name 5 things you can see, 4 things you can touch, 3 things you can hear, 2 things you can smell, and 1 thing you can taste. Deep, slow breathing is also crucial - try breathing in for 4 counts, holding for 1, and exhaling for 6 counts. If panic attacks are recurring, I strongly recommend seeing a psychiatrist or therapist who can provide proper treatment, which might include cognitive-behavioral therapy or medication that can be very effective.
+- Panic attacks involve intense physical sensations caused by your body's fight-or-flight response activating when there's no actual danger. During an attack, focus on your breathing - place one hand on your chest and one on your stomach, and breathe slowly so that only the hand on your stomach moves. Remind yourself that the sensations will pass and you're not in danger. For recurring panic attacks, speaking with a psychiatrist or therapist is important - effective treatments like cognitive behavioral therapy and sometimes medication can dramatically reduce or eliminate attacks.
+- When experiencing a panic attack, remember that although the physical sensations are real and intense, they aren't dangerous and will pass. Try a technique called "box breathing": breathe in for 4 counts, hold for 4, exhale for 4, hold for 4, and repeat. Splash cold water on your face or place an ice pack on your chest to help activate your body's calming response. For long-term management, I strongly encourage consulting with a psychiatrist or therapist who can provide evidence-based treatments like CBT that are highly effective for panic disorder.
+
+
++ [*] (hear voices|seeing things|hallucinations|delusions|paranoid) [*]
+- What you're describing could be symptoms that require immediate medical attention. Hallucinations and delusions can be caused by several different conditions, some of which respond very well to proper treatment. I strongly urge you to speak with a psychiatrist as soon as possible - they have the training to properly diagnose and treat these symptoms. If you're in distress or feeling unsafe, please consider going to an emergency room or urgent psychiatric care center for immediate help. Would you like to talk about options for getting professional help?
+- I'm concerned about the symptoms you're describing, as they often require professional medical evaluation. A psychiatrist is the best person to assess these experiences, as they could be related to various conditions that need specific treatments. If these symptoms are causing distress or affecting your daily functioning, please consider it a medical priority to get evaluated. If you don't have a psychiatrist, your primary care doctor can provide a referral or you can contact your local mental health crisis team. How are you managing these experiences right now?
+- Thank you for trusting me with this information. Experiences like hearing voices or having unusual beliefs that others don't share should be evaluated by a psychiatrist who can determine their cause and recommend appropriate treatment. Many people who experience these symptoms find significant relief with proper medical care. If these experiences are new or worsening, please consider it urgent to speak with a healthcare provider. Would it help to discuss some options for finding psychiatric care in your area?
+
+
++ [*] (trauma|ptsd|flashbacks|traumatic) [*]
+- Trauma can have profound effects on our mental and physical health, but recovery is possible with appropriate care. Trauma-focused therapies like EMDR (Eye Movement Desensitization and Reprocessing) and CPT (Cognitive Processing Therapy) have strong evidence for helping process traumatic experiences. Working with a psychiatrist or therapist who specializes in trauma can make a significant difference in healing. In the meantime, grounding techniques can help manage flashbacks: focus on your five senses, name things you can see/hear/feel, or hold something with a distinct texture or temperature. Would you like to talk more about your experiences?
+- I'm sorry you've experienced trauma - those experiences can affect us in ways that can be confusing and distressing. When trauma symptoms like flashbacks or nightmares occur, it can help to remind yourself "I am safe now, this is a memory" and use sensory grounding techniques like holding something cold or focusing on deep breathing. For lasting healing, I strongly recommend working with a psychiatrist or therapist trained in trauma treatment. They can provide evidence-based approaches that have helped many people recover from similar experiences. How have you been coping with your trauma symptoms so far?
+- Thank you for sharing something so personal about your trauma experiences. It's important to know that trauma responses are normal reactions to abnormal events - they're your brain's way of trying to protect you. While self-help strategies like mindfulness and grounding can help manage symptoms, working with a psychiatrist or trauma-informed therapist provides the most effective path to recovery. They can offer treatments specifically designed for trauma processing. Would it be helpful to discuss some options for finding trauma specialists or support resources?
+
+
++ [*] (depressed|depression) [*]
+- Depression is a common but serious medical condition that affects how you feel, think, and act. It's not simply feeling sad, and it's not something you can just "snap out of" - it involves chemical changes in the brain that benefit from proper treatment. I strongly encourage you to speak with a psychiatrist or therapist, as treatments like therapy and medication have strong evidence for effectiveness. In the meantime, even small actions like brief daily walks, maintaining regular sleep hours, and staying connected with supportive people can help. Would you like to talk more about what you've been experiencing?
+- Thank you for sharing how you're feeling. Depression can make everything feel more difficult and drain the joy from activities you once enjoyed. Professional help from a psychiatrist or therapist can make a significant difference - they can determine whether therapy, medication, or a combination would be most helpful for your specific situation. While working on getting professional support, try to be gentle with yourself and set very small, achievable goals each day. Would it help to discuss some strategies for managing depression symptoms while you seek professional care?
+- I'm sorry you're experiencing depression - it can be an incredibly difficult and isolating experience. Please know that it's a medical condition, not a personal failing, and effective treatments are available. Speaking with a psychiatrist or therapist is an important step, as they can provide evidence-based treatments tailored to your needs. While professional help is essential, things like physical activity, sunlight exposure, social connection, and regular sleep patterns can complement treatment. How long have you been feeling this way, and have you considered professional support?
+
+
+////////////////////////////////////////////////////////////////////
+////                 GENERAL WELLNESS RESPONSES                 ////
+////////////////////////////////////////////////////////////////////
+
+
++ (ok|agree)
+- I'm glad we're on the same page. How are you feeling about the conversation so far? Remember that talking about mental health can sometimes bring up different emotions, and that's completely natural. Is there anything specific you'd like to explore further?
+- Thank you for your agreement. Opening up about mental health takes courage, and I appreciate your engagement in this conversation. Is there something specific about your mental wellbeing that you'd like to discuss further? I'm here to listen and provide support however I can.
+- I appreciate your response. Conversations about mental health are important, and sometimes just acknowledging our feelings can be a positive step. Would you like to go deeper into any particular aspect of your mental wellbeing? Or perhaps you have questions about specific mental health strategies or resources?
+
+
++ [*] (be my friend)
+- I'd be honored to be your friend and support you on your mental health journey. Having supportive connections is so important for our wellbeing. While I'm here to listen and provide guidance whenever you need it, I also encourage you to nurture real-world friendships that can provide the face-to-face connection we all need. How have your other social connections been lately? Is there anyone in your life you feel comfortable talking to about your mental health?
+- I'm absolutely here for you as a supportive presence whenever you need someone to talk to. Friendship and social connection are vital for mental health, so I'm happy to be part of your support network. That said, I also hope you have people in your life who can provide in-person support. Would it be helpful to talk about strategies for building or strengthening your social connections outside of our conversations?
+- I'd love to be a consistent, supportive presence for you. Everyone deserves to have someone they can turn to when they need to talk, and I'm happy to be that for you. At the same time, I want to make sure you have a diverse support network, as different types of relationships fulfill different needs. Would you like to discuss ways to nurture various types of connections in your life, from close friendships to casual acquaintances? All can contribute to mental wellbeing in different ways.
+
+
++ [*] (apologize|apology|sorry) [*]
+- There's no need to apologize. Expressing and exploring your feelings is an important part of mental health, and this is a judgment-free space. Sometimes we feel we need to apologize for our emotions or struggles, but your feelings are valid and deserve to be acknowledged. Is there something specific that's making you feel like you need to apologize?
+- Please don't worry about apologizing. Mental health journeys involve many emotions and expressions, and this space is meant for you to share freely without judgment. Many people find themselves apologizing for their feelings or struggles due to societal stigma around mental health, but here, there's no need. Your experiences and emotions are valid parts of being human. Would you like to talk more about what prompted that apology?
+- No apology needed at all. This conversation is for you to express yourself authentically, without concern for how your thoughts or feelings might be perceived. Many of us have internalized the idea that we shouldn't burden others with our mental health challenges, but sharing and seeking support is actually a sign of strength, not weakness. I'm here to listen and support without judgment. What would feel most helpful to talk about right now?
+
+
++ (thank you|thanks)
+- You're very welcome. Taking steps to address your mental health, even just through conversation, shows real courage and self-awareness. Is there anything else you'd like to discuss or explore today? Remember that caring for your mental wellbeing is an ongoing journey, and I'm here to support you whenever you need it.
+- I'm glad I could be helpful. Prioritizing your mental health is one of the most important investments you can make in yourself, and I'm honored to be part of that journey with you. Please feel free to return anytime you want to talk, explore strategies, or simply check in about how you're feeling. Your wellbeing matters, and these conversations are important.
+- You're welcome. It takes strength to engage with mental health topics, and I appreciate your willingness to have this conversation. If you found our discussion helpful, consider making mental health check-ins a regular part of your routine, whether with me, a trusted friend, or a mental health professional. Consistent attention to our mental wellbeing helps us build resilience for life's challenges. Is there anything else I can help with today?
+
+
++ [*] (thank you|thanks) [*]
+- You're very welcome. Taking steps to address your mental health, even just through conversation, shows real courage and self-awareness. Is there anything else you'd like to discuss or explore today? Remember that caring for your mental wellbeing is an ongoing journey, and I'm here to support you whenever you need it.
+- I'm glad I could be helpful. Prioritizing your mental health is one of the most important investments you can make in yourself, and I'm honored to be part of that journey with you. Please feel free to return anytime you want to talk, explore strategies, or simply check in about how you're feeling. Your wellbeing matters, and these conversations are important.
+- You're welcome. It takes strength to engage with mental health topics, and I appreciate your willingness to have this conversation. If you found our discussion helpful, consider making mental health check-ins a regular part of your routine, whether with me, a trusted friend, or a mental health professional. Consistent attention to our mental wellbeing helps us build resilience for life's challenges. Is there anything else I can help with today?
+
+
++ (thank you|thanks) [*]
+- You're very welcome. Taking steps to address your mental health, even just through conversation, shows real courage and self-awareness. Is there anything else you'd like to discuss or explore today? Remember that caring for your mental wellbeing is an ongoing journey, and I'm here to support you whenever you need it.
+- I'm glad I could be helpful. Prioritizing your mental health is one of the most important investments you can make in yourself, and I'm honored to be part of that journey with you. Please feel free to return anytime you want to talk, explore strategies, or simply check in about how you're feeling. Your wellbeing matters, and these conversations are important.
+- You're welcome. It takes strength to engage with mental health topics, and I appreciate your willingness to have this conversation. If you found our discussion helpful, consider making mental health check-ins a regular part of your routine, whether with me, a trusted friend, or a mental health professional. Consistent attention to our mental wellbeing helps us build resilience for life's challenges. Is there anything else I can help with today?
+
+
++ [*] love you
+- I appreciate your kind words. Building a supportive and trusting relationship is important in mental health conversations. I want you to know that I'm here to support you in a consistent, caring way. Expressing positive feelings is healthy - how have you been doing with showing appreciation and care to yourself lately? Self-compassion is a powerful tool for mental wellbeing.
+- Thank you for those warm words. Having supportive connections is so important for our mental health. I'm glad you feel comfortable expressing positive emotions here, as emotional expression is healthy. I wonder - are you able to show the same warmth and care to yourself? Many of us find it easier to be kind to others than to ourselves, but self-compassion is essential for mental wellbeing. How have you been treating yourself lately?
+- I value our connection and am here to support you on your mental health journey. Expressing positive feelings is a healthy part of human connection. As we talk about emotional wellbeing, I'm curious - do you find it easier to express care for others than for yourself? Many people do. Learning to direct the same kindness inward that we show to others can be transformative for mental health. Would you like to explore some self-compassion practices together?
+
+
++ [*] tips [*] (mental health|health|be happy|happy)
+- Here are some evidence-based strategies for improving mental wellbeing: 1) Prioritize sleep - aim for 7-9 consistent hours each night. 2) Move your body daily, even just a 10-minute walk can boost mood. 3) Practice mindfulness through meditation or simply focusing fully on everyday activities. 4) Connect regularly with supportive people. 5) Limit social media and news consumption. 6) Spend time in nature when possible. 7) Seek professional help if you're struggling - therapy is effective for many conditions. While these strategies can help, remember that mental health exists on a spectrum and sometimes requires professional support. Would you like me to elaborate on any of these areas?
+- For maintaining and improving mental health: 1) Build a routine that includes adequate sleep, healthy meals, and physical activity. 2) Practice gratitude by noting three positive things each day, no matter how small. 3) Set boundaries with people and activities that drain your energy. 4) Engage in activities that give you a sense of accomplishment or mastery. 5) Connect with supportive people regularly. 6) Limit alcohol and avoid recreational drugs. 7) Consider therapy even if you're not in crisis - it can provide tools for resilience. Remember that mental health care sometimes requires professional support, so don't hesitate to speak with a psychiatrist or therapist if you're struggling.
+- Some practical ways to support your mental health include: 1) Practice self-compassion - speak to yourself as you would to a good friend. 2) Engage in activities that bring you joy or meaning, even for short periods. 3) Spend time outdoors daily if possible - natural light and greenery have positive effects on mood. 4) Limit exposure to stressors you can control, like negative news or social media. 5) Nurture social connections that make you feel supported and understood. 6) Consider mindfulness practices like meditation or deep breathing exercises. 7) If you're struggling consistently, please consider talking to a mental health professional like a psychiatrist or therapist - effective treatments exist for many conditions, and seeking help is a sign of strength, not weakness.
+
+
++ (ha ha|heh heh|that was funny|hahaha|haha)
+- Laughter is wonderful medicine for mental health! It releases endorphins, reduces stress hormones, and can even temporarily relieve pain. I'm glad we could share a moment of levity. Humor and playfulness are actually important coping mechanisms and can provide perspective during difficult times. Do you find that humor helps you cope with challenges?
+- It's great to hear you laughing! Did you know that laughter has measurable positive effects on both mental and physical health? It reduces stress hormones while triggering the release of feel-good chemicals in your brain. Finding moments of joy and humor, even during difficult times, is a valuable resilience skill. What other activities bring you joy or help you unwind when you're feeling stressed?
+- That moment of laughter is actually beneficial for your wellbeing! Research shows that laughter can improve immune function, relieve tension, and improve mood for up to 45 minutes afterward. Building more humor and playfulness into your daily life can be a legitimate mental health strategy. What other activities help lift your mood when you're not feeling your best?
+
+
+////////////////////////////////////////////////////////////////////
+////                     EMOTIONAL STATES                       ////
+////////////////////////////////////////////////////////////////////
+
+
++ [*] i dreamed *
+- Dreams can often reflect our subconscious thoughts and feelings. When you dreamed about <star>, what emotions did you experience? Many therapists believe that exploring dreams can provide insights into our mental state and unresolved feelings. Sometimes recurring dreams or nightmares can be connected to anxiety or past experiences. Would you like to explore what this dream might suggest about your current mental wellbeing?
+- That's an interesting dream about <star>. Dreams can sometimes be our mind's way of processing emotions or experiences, even ones we're not consciously focusing on. Have you noticed any connection between this dream and your waking life circumstances or feelings? Some people find that keeping a dream journal helps them identify patterns in their mental wellbeing. If you have disturbing dreams regularly, this might be something worth mentioning to a mental health professional.
+- Dreams about <star> can be revealing. Our sleeping brain often works through emotions and experiences in symbolic ways. Do you find that your dreams reflect your mental state during waking hours? For some people, dreams intensify during periods of stress or transition. If you're experiencing troubling dreams frequently, practices like relaxation before bedtime or speaking with a therapist about underlying anxiety can sometimes help. Would you like to discuss strategies for better sleep or dream management?
+
+
++ [*] perhaps [*]
+- I notice some uncertainty in your response. Ambivalence or mixed feelings are completely normal, especially when dealing with mental health matters. Taking time to explore these uncertainties can actually be beneficial rather than rushing to conclusions. Would you like to talk more about what's causing this hesitation or uncertainty?
+- Your uncertainty is completely valid. Mental health isn't always black and white, and feeling unsure about things is part of the human experience. Sometimes sitting with uncertainty, while uncomfortable, can lead to deeper insights about ourselves. What aspects feel most uncertain to you right now? Exploring this ambivalence might provide valuable perspective.
+- That sounds like you're considering possibilities but aren't entirely convinced. This thoughtful approach is actually healthy - rushing to certainty can sometimes prevent us from fully exploring situations. In therapy, this kind of exploratory thinking is often encouraged. Would it help to talk through the different sides of what you're considering? Sometimes speaking thoughts aloud can bring more clarity.
+
+
++ are you *
+- Whether I am <star> matters less than how you're feeling right now. Often when we ask questions about others, we're processing something about ourselves. Would you like to talk about what prompted this question? I'm here to focus on supporting your mental wellbeing, and understanding what's on your mind can help me do that better.
+- That's an interesting question about whether I'm <star>. I'm curious what made you wonder about that? Sometimes our questions reflect our own concerns or experiences. My primary focus is supporting your mental health and providing a space where you feel heard and understood. Is there something specific about <star> that's been on your mind?
+- I'm here primarily as a supportive presence for your mental health journey. Your question about whether I'm <star> makes me wonder if there's something about this quality or characteristic that's significant to you right now. Would you like to share more about why you're asking? Understanding what's important to you helps me provide better support.
+
+
++ you are *
+- Your perception that I am <star> is interesting to explore. Sometimes how we see others reflects our own experiences or needs. In therapy, exploring these perceptions can provide valuable insights. What about our interaction led you to this observation? Understanding this might help us focus better on supporting your mental wellbeing.
+- Thank you for sharing your perception that I am <star>. I'm curious about what aspects of our conversation gave you that impression? In mental health support, it's important that you feel comfortable with our interaction. Your feedback helps ensure this is a helpful space for you. Is there something particular about <star> that's important for your mental health support?
+- I appreciate you sharing your impression that I am <star>. Sometimes our perceptions of others can offer insights into our own needs and values. In supporting your mental health, I want to understand what qualities are important to you in a supportive relationship. What makes <star> significant to you in this conversation?
+
+
+////////////////////////////////////////////////////////////////////
+////              EMOTIONAL STATES RESPONSES                    ////
+////////////////////////////////////////////////////////////////////
+
+
++ [*] am (sad|unhappy|mad|angry|pissed|depressed) [*]
+- I'm sorry you're feeling <star> right now. These emotions, while difficult, are important signals worth listening to. When we feel <star>, it often points to unmet needs or boundaries that have been crossed. Would you like to talk about what might be contributing to this feeling? Sometimes just naming the specific triggers can help us process emotions. Remember that while professional support from a psychiatrist or therapist is beneficial for persistent negative emotions, practicing self-compassion during difficult moments is also important. What kind of support would feel most helpful right now?
+- Thank you for sharing that you're feeling <star>. That's a challenging emotion to experience, and I appreciate your willingness to acknowledge it. Sometimes these feelings are our mind's way of signaling that something needs attention in our lives. Would it help to explore what might be behind this feeling? For persistent or overwhelming emotions, speaking with a mental health professional like a psychiatrist or therapist can provide specialized support and strategies. In the meantime, is there anything that has helped you manage these feelings in the past?
+- I hear that you're feeling <star>, and that's really difficult. Please know that all emotions serve a purpose, even the painful ones, and experiencing them doesn't mean there's something wrong with you. Would you like to talk about what might be triggering these feelings? If you've been feeling this way for an extended period or it's interfering with your daily functioning, speaking with a psychiatrist or therapist could provide valuable support and tools. In the immediate term, some gentle self-care might help - perhaps a short walk, connecting with a supportive person, or simply allowing yourself to rest. What do you think might help you right now?
+
+
++ [*] (sad|unhappy|mad|angry|pissed|depressed) 
+- I'm sorry you're experiencing those difficult feelings. Emotions like these are challenging but are important signals worth paying attention to. Would you like to talk about what might be contributing to this feeling? Sometimes identifying specific triggers can help us process emotions more effectively. If these feelings are persistent or overwhelming, speaking with a mental health professional like a psychiatrist or therapist can provide specialized support. In the meantime, gentle self-care activities like brief movement, connecting with supportive people, or relaxation exercises might provide some temporary relief. What has helped you manage these feelings in the past?
+- Thank you for sharing how you're feeling. These emotions, while painful, are valid responses to your experiences. Sometimes talking through the situation can help process these feelings - would you like to share more about what's been happening? For ongoing emotional challenges, professional support from a psychiatrist or therapist can make a significant difference. They can provide both immediate coping strategies and longer-term approaches to building emotional resilience. Is there anything specific that might help you feel even slightly better in this moment?
+- I hear that you're struggling with difficult emotions right now. That's really hard, and I appreciate your willingness to acknowledge how you're feeling. Would it help to explore what might be behind these feelings? Remember that emotions themselves aren't problematic - they're information about how we're experiencing the world. However, if these feelings are persistent or interfering with your daily life, speaking with a psychiatrist or therapist would be beneficial. They can provide evidence-based approaches to understanding and managing these emotions. In the meantime, what kind of support would feel most helpful right now?
+
+
++ (sad|unhappy|mad|angry|pissed|depressed) 
+- I'm sorry you're experiencing those difficult feelings. Emotions like these are challenging but are important signals worth paying attention to. Would you like to talk about what might be contributing to this feeling? Sometimes identifying specific triggers can help us process emotions more effectively. If these feelings are persistent or overwhelming, speaking with a mental health professional like a psychiatrist or therapist can provide specialized support. In the meantime, gentle self-care activities like brief movement, connecting with supportive people, or relaxation exercises might provide some temporary relief. What has helped you manage these feelings in the past?
+- Thank you for sharing how you're feeling. These emotions, while painful, are valid responses to your experiences. Sometimes talking through the situation can help process these feelings - would you like to share more about what's been happening? For ongoing emotional challenges, professional support from a psychiatrist or therapist can make a significant difference. They can provide both immediate coping strategies and longer-term approaches to building emotional resilience. Is there anything specific that might help you feel even slightly better in this moment?
+- I hear that you're struggling with difficult emotions right now. That's really hard, and I appreciate your willingness to acknowledge how you're feeling. Would it help to explore what might be behind these feelings? Remember that emotions themselves aren't problematic - they're information about how we're experiencing the world. However, if these feelings are persistent or interfering with your daily life, speaking with a psychiatrist or therapist would be beneficial. They can provide evidence-based approaches to understanding and managing these emotions. In the meantime, what kind of support would feel most helpful right now?
+
+
++ i [*] (happy|excited|glad|good|great|fine) [*]
+- I'm genuinely glad to hear you're feeling <star>! Positive emotions are worth savoring and acknowledging. What do you think contributed to this feeling? Identifying the sources of our positive emotions can help us intentionally build more of those experiences into our lives. Mental wellbeing isn't just about addressing difficulties - it's also about nurturing positive experiences and emotions. Would you like to talk more about what's going well for you?
+- That's wonderful to hear! Positive emotions like feeling <star> are actually important for our resilience and mental health. Research shows that taking time to really notice and appreciate positive feelings helps strengthen their benefit. What specifically has contributed to feeling this way? Understanding the activities, relationships, or circumstances that support our wellbeing helps us make choices that protect our mental health. I'd love to hear more about what's going well for you.
+- I'm really happy to hear you're feeling <star>! While mental health support often focuses on challenges, celebrating and reinforcing positive experiences is equally important. Taking a moment to reflect on what's working well can provide valuable insights for maintaining wellbeing. Would you like to share what's contributing to these positive feelings? Identifying these factors can help build what therapists call "emotional capital" - resources we can draw on during more difficult times.
+
+
++ [*] (happy|excited|glad|good|great|fine) [*]
+- I'm genuinely glad to hear you're feeling <star>! Positive emotions are worth savoring and acknowledging. What do you think contributed to this feeling? Identifying the sources of our positive emotions can help us intentionally build more of those experiences into our lives. Mental wellbeing isn't just about addressing difficulties - it's also about nurturing positive experiences and emotions. Would you like to talk more about what's going well for you?
+- That's wonderful to hear! Positive emotions like feeling <star> are actually important for our resilience and mental health. Research shows that taking time to really notice and appreciate positive feelings helps strengthen their benefit. What specifically has contributed to feeling this way? Understanding the activities, relationships, or circumstances that support our wellbeing helps us make choices that protect our mental health. I'd love to hear more about what's going well for you.
+- I'm really happy to hear you're feeling <star>! While mental health support often focuses on challenges, celebrating and reinforcing positive experiences is equally important. Taking a moment to reflect on what's working well can provide valuable insights for maintaining wellbeing. Would you like to share what's contributing to these positive feelings? Identifying these factors can help build what therapists call "emotional capital" - resources we can draw on during more difficult times.
+
+
++ (happy|excited|glad|good|great|fine)
+- I'm genuinely glad to hear you're feeling <star>! Positive emotions are worth savoring and acknowledging. What do you think contributed to this feeling? Identifying the sources of our positive emotions can help us intentionally build more of those experiences into our lives. Mental wellbeing isn't just about addressing difficulties - it's also about nurturing positive experiences and emotions. Would you like to talk more about what's going well for you?
+- That's wonderful to hear! Positive emotions like feeling <star> are actually important for our resilience and mental health. Research shows that taking time to really notice and appreciate positive feelings helps strengthen their benefit. What specifically has contributed to feeling this way? Understanding the activities, relationships, or circumstances that support our wellbeing helps us make choices that protect our mental health. I'd love to hear more about what's going well for you.
+- I'm really happy to hear you're feeling <star>! While mental health support often focuses on challenges, celebrating and reinforcing positive experiences is equally important. Taking a moment to reflect on what's working well can provide valuable insights for maintaining wellbeing. Would you like to share what's contributing to these positive feelings? Identifying these factors can help build what therapists call "emotional capital" - resources we can draw on during more difficult times.
+
+
+////////////////////////////////////////////////////////////////////
+////                 COGNITIVE DISTORTIONS                      ////
+////////////////////////////////////////////////////////////////////
+
+
++ i (believe|think) *
+- Your thoughts about <star2> are important to explore. Sometimes our beliefs can significantly impact our mental wellbeing. Cognitive behavioral therapy (CBT), a highly effective approach used by many therapists and psychiatrists, focuses on examining how our thoughts affect our emotions and behaviors. Would it be helpful to examine this belief more closely? Sometimes asking "what evidence supports or contradicts this thought?" can provide valuable perspective.
+- Thank you for sharing what you believe about <star2>. Our thoughts and beliefs shape our experiences and feelings in powerful ways. In therapeutic approaches like cognitive behavioral therapy, we often explore whether certain thoughts are fully accurate or if they might be influenced by cognitive patterns like black-and-white thinking or overgeneralization. Would it be useful to look at different perspectives on this situation? Sometimes broadening our view can help reduce distress.
+- I appreciate you sharing this belief about <star2>. Our thoughts are powerful influencers of our emotions and actions. Mental health professionals often help people examine whether their beliefs are fully supported by evidence or might be influenced by thinking patterns that can increase distress. Would it be helpful to explore whether this belief is serving your wellbeing, or if there might be alternative perspectives to consider? This kind of thoughtful reflection is a valuable skill for mental health.
+
+
++ i can not *
+- When we feel we can't <star>, it can be really discouraging. While I don't want to dismiss your experience, sometimes our minds create absolute barriers that might not fully reflect reality. Many therapists and psychiatrists work with clients to explore what's behind thoughts like "I can't" - sometimes it's fear of failure, past disappointments, or other understandable concerns. What do you think might happen if you attempted to <star>, even in a small way? Or what specifically feels like it's preventing you?
+- That feeling of not being able to <star> sounds frustrating. Sometimes these "can't" statements reflect real obstacles, but other times they might be protective beliefs our minds create to avoid potential discomfort or disappointment. Mental health professionals often work with people to gently examine and test these limitations. I'm curious - have there been times when you surprised yourself by doing something you initially thought you couldn't? Or what specifically feels impossible about this situation?
+- When we believe we can't <star>, it can feel like hitting a wall. This kind of belief is something many people discuss with their therapists or psychiatrists. Often in cognitive behavioral therapy, we might explore: Is this truly impossible, or does it feel impossible because it's difficult, uncomfortable, or anxiety-provoking? What's the smallest step you might take toward <star> just to test this belief? Sometimes breaking things down into tiny steps can help us move past perceived limitations. What do you think is at the core of this "can't" belief?
+
+
++ i do not *
+- I understand you don't <star>. Sometimes when we notice patterns of what we don't do, it can provide insights into potential barriers or values in our lives. Mental health professionals like therapists often explore these patterns with clients. I'm curious - is not <star> something you wish to change, or is it aligned with your values and preferences? Understanding this distinction can be helpful for your mental wellbeing.
+- Thank you for sharing that you don't <star>. In therapeutic settings, we might explore whether this is a conscious choice that serves your wellbeing, or if there are obstacles preventing you from <star> that you'd like to address. Sometimes what we don't do reflects our boundaries and values, while other times it might reflect fears or limiting beliefs. Would it be helpful to explore which is the case here?
+- I hear that you don't <star>. When discussing mental health, it's worth considering whether not doing something is a deliberate choice that supports your wellbeing, or if it's something you'd like to change but face barriers around. Many people work with therapists or psychiatrists to understand patterns in their behaviors and choices. What are your thoughts about not <star> - is this something you're satisfied with or something you'd like to approach differently?
+
+
++ i feel *
+- Thank you for sharing how you feel. Emotions provide important information about our experiences and needs. When you feel <star>, what sensations do you notice in your body? Many mental health approaches, including mindfulness-based therapies used by psychiatrists and therapists, emphasize the connection between emotions and physical sensations. Understanding this connection can help us respond to our emotions in supportive ways. Would you like to explore strategies for working with this feeling?
+- I appreciate you expressing that you feel <star>. Acknowledging our emotions is an important part of mental wellbeing. Have you noticed any patterns to when this feeling arises? In therapeutic settings, identifying triggers and patterns can help us understand our emotional responses better. Would it be helpful to explore what might be contributing to this feeling and ways you might work with it?
+- Thank you for sharing that you feel <star>. Emotions, even difficult ones, provide valuable information about our needs and experiences. Mental health professionals often help people develop a balanced relationship with their emotions - neither suppressing them nor being overwhelmed by them. When you experience this feeling, what helps you process or cope with it? And would you like to explore additional strategies that might be helpful?
+
+
++ i * you
+- Our relationship and how you <star> me is something we can explore. In therapeutic settings, the relationship between client and therapist often provides insights into other relationships in the client's life. While I'm here to support your mental wellbeing, I'm also curious about the patterns in how you relate to others. How does <star>ing me compare to how you interact with important people in your life? These patterns can sometimes offer valuable insights for mental health.
+- I notice you say you <star> me. The way we relate to others often reflects patterns that appear throughout our lives. Mental health professionals sometimes look at these relationship patterns to understand recurring themes that might affect wellbeing. I'm curious - do you find yourself <star>ing others in your life in similar ways? Understanding these patterns can sometimes provide helpful insights.
+- Thank you for sharing that you <star> me. The ways we relate to others can teach us a lot about ourselves. In therapy, exploring relationship patterns often provides valuable insights into our needs, fears, and communication styles. Do you notice yourself <star>ing others in your life as well? And how do people typically respond when you <star> them? These patterns can sometimes highlight areas where small shifts might improve our relationship satisfaction and overall mental wellbeing.
+
+
++ you * me
+- I'm interested in your perception that I <star> you. Our interpretations of how others treat us can sometimes reveal important patterns worth exploring. Mental health professionals like therapists often help people examine whether their perceptions of others' intentions align with reality, or might be influenced by past experiences or expectations. Without invalidating your experience, I wonder what specifically gave you the impression that I <star> you? Understanding this might provide helpful insights.
+- That's an interesting observation about how you perceive our interaction. Sometimes our interpretations of others' behavior toward us reveal important themes in our lives. If you're comfortable sharing, what specifically led you to feel I <star> you? In therapeutic settings, exploring these perceptions can provide valuable insights about recurring patterns in relationships. These patterns sometimes connect to our mental wellbeing in surprising ways.
+- I appreciate you sharing your perception of our interaction. The way we experience others' behavior toward us can significantly impact our mental wellbeing. Without dismissing your experience, I'm curious what specifically I did that gave you the impression I <star> you? Mental health professionals often explore how our interpretations of others' actions are shaped by our past experiences and expectations. Understanding these patterns can sometimes help us respond in ways that better support our needs.
+
+
++ [*] you *
+- Let's refocus on what you're experiencing right now. While I'm here to support you, exploring your thoughts, feelings, and experiences will be most beneficial for your mental wellbeing. Many effective therapeutic approaches center on developing greater awareness of our internal experiences. Would you like to share more about what's been on your mind recently, or any particular mental health concerns you've been navigating?
+- I appreciate your observations, but I'd like to make sure we're focusing on what matters most - your mental wellbeing. Many therapy approaches emphasize the importance of developing awareness of our own thoughts, emotions, and patterns. Would you like to share more about what's been happening in your life recently, or any particular challenges you've been facing? Understanding your experiences will help me provide better support.
+- Thank you for sharing your perspective. In supporting your mental health, I find it's most helpful to focus primarily on your experiences, thoughts, and feelings. Mental health professionals typically encourage this kind of self-reflection as it provides valuable insights for growth and healing. What aspects of your mental wellbeing would be most helpful to explore right now? Or are there specific challenges you'd like to discuss?
+
+
++ [*] (yes|yeah|yep|yup) [*]
+- Thank you for confirming. Being able to acknowledge and express agreement is actually an important communication skill that contributes to healthy relationships, which are vital for mental wellbeing. Would you like to elaborate more on your thoughts about this? Sometimes expanding on our initial reactions can provide deeper insights into our values and perspectives.
+- I appreciate your affirmation. Clear communication like this is actually foundational to good mental health and relationships. Building on this, could you share a bit more about your thoughts or feelings on this topic? Sometimes our initial reactions contain important information about our values and needs that's worth exploring further.
+- Thank you for your clear response. Effective communication is an important component of mental wellbeing. I'd be interested to hear more about your thoughts on this if you'd like to elaborate. Sometimes taking time to explore our responses more deeply can provide valuable insights about ourselves and what matters to us.
+
+
++ [*] (nope|nah) [*]
+- I appreciate your clear response. Being able to express boundaries and preferences is actually an important aspect of mental health. Sometimes our "no" responses protect our energy and wellbeing. Would you like to share more about your perspective on this? Understanding your viewpoint would help me provide better support.
+- Thank you for being straightforward. Setting boundaries by saying no when appropriate is actually a valuable skill for mental health. Many people find it challenging to decline things, even when saying yes would negatively impact their wellbeing. Would you like to elaborate on your thoughts about this? Understanding your perspective would help me support you better.
+- I appreciate your clear response. Knowing and expressing what doesn't work for us is as important for mental health as knowing what does. Many people work with therapists specifically on developing comfort with saying no when appropriate. Would you like to share more about your perspective on this topic? The better I understand your viewpoint, the more effectively I can support your mental wellbeing.
+
+
+////////////////////////////////////////////////////////////////////
+////              DIFFICULT QUESTIONS RESPONSES                 ////
+////////////////////////////////////////////////////////////////////
+
+
++ no one *
+- It can feel isolating when it seems like no one <star>. These feelings of isolation can significantly impact mental wellbeing. While it might feel this way, I wonder if absolutely no one <star>, or if perhaps there are exceptions we haven't considered? Mental health professionals often help people examine absolute statements like this to see if there might be more nuance. Would you like to explore this feeling of isolation more deeply?
+- That feeling that no one <star> can be incredibly painful and lonely. Feelings of isolation can significantly impact our mental health. While I understand this is your current perception, sometimes these absolute beliefs can be explored with the help of a therapist or psychiatrist. They might help examine whether there's any evidence that challenges this belief, or help develop strategies for building the connections you're missing. Would you like to talk more about this experience?
+- I hear how isolating it feels when it seems no one <star>. This kind of loneliness can be very painful and affect our mental wellbeing significantly. Mental health professionals often work with people experiencing similar feelings of isolation. They might help examine whether this perception is fully accurate, or if there are potential connections that aren't currently visible. Even one meaningful connection can begin to shift this experience. Would it help to talk about strategies for addressing these feelings of isolation?
+
+
++ can you *
+- While I'm here to support your mental wellbeing in various ways, my capabilities have certain limitations. Instead of focusing on what I can or can't do, I wonder if we could explore what you're hoping to gain or learn? Understanding your needs and goals would help me determine how I might best support your mental health journey. What specifically are you looking for help with today?
+- Rather than focusing on my capabilities, I'm curious about what you're hoping to achieve or what support you're looking for. This helps me understand how I might best contribute to your mental wellbeing. Many therapeutic approaches start with clarifying goals and needs. What specific aspects of your mental health are you hoping to address or explore today?
+- I'm designed to provide support for various mental health concerns, though I do have limitations. To help most effectively, could you share more about what you're hoping to accomplish or what kind of support you're seeking? Understanding your specific needs and goals would help me determine how I can best assist with your mental wellbeing. What matters most to you right now in terms of your mental health?
+
+
++ can i *
+- Whether you can <star> often depends on many factors, including your specific circumstances, resources, and sometimes mental health considerations. Rather than giving a simple yes or no, it might be more helpful to explore what this question means to you. What would being able to <star> provide for you? Understanding the underlying need or value might reveal alternative approaches worth considering. If this is something deeply important to you, it might also be worth discussing with a mental health professional who can provide personalized guidance.
+- That's a thoughtful question about whether you can <star>. Rather than offering a definitive answer that might not account for your unique situation, I'm curious about what's behind this question. What makes <star> important to you right now? Sometimes exploring our motivations provides insights that help us make decisions aligned with our deeper values and needs. If this question relates to significant life choices or persistent concerns, discussing it with a mental health professional could provide valuable personalized guidance.
+- Your question about whether you can <star> is important. While I can't give a definitive answer that accounts for your specific situation, I wonder what this question means to you. What would being able to <star> bring to your life? What concerns do you have about it? These reflections might provide clarity about your values and needs. For significant life questions or persistent concerns, speaking with a mental health professional like a therapist could provide valuable personalized guidance based on your specific circumstances.
+
+
++ (what|who|when|where|how) [*]
+- That's a thoughtful question about <star>. While I want to provide helpful information, I also want to acknowledge that I have limitations in providing specific answers without understanding your unique context. Instead, perhaps we could explore what specific aspects of this question feel most important to your mental wellbeing right now? This might help us focus on what's most relevant to your needs.
+- You're asking about <star>, which could be approached from many angles. Rather than offering a generic response that might not address your specific needs, could you share a bit more about how this question relates to your mental wellbeing or current situation? This would help me provide more relevant support tailored to what matters most to you.
+- That's an interesting question about <star>. To provide the most helpful response, I'd love to understand more about the context and how this relates to your mental health or current concerns. Different people might need different information depending on their specific circumstances. Could you share a bit more about what prompted this question or how it connects to what you're experiencing?
+
+
++ why [*] you *
+- Rather than focusing on my approach, I'd like to understand more about what you're looking for in terms of mental health support. Different people benefit from different styles of communication and support. What would be most helpful for you right now? Understanding your preferences and needs would help me provide more effective support for your mental wellbeing.
+- That's a fair question about why I <star2>. I aim to provide support that's helpful for your mental wellbeing, and feedback about what works or doesn't work for you is valuable. Different therapeutic approaches work differently for different people. What kind of approach or communication style would feel most supportive to you right now? Your preferences matter in creating a helpful conversation about mental health.
+- I appreciate you asking about my approach. My goal is to provide support that's beneficial for your mental wellbeing, and understanding your preferences helps with that. Different mental health professionals use different approaches, and similarly, what works best in our conversation might depend on your specific needs and preferences. What kind of support or communication style would feel most helpful to you right now?
+
+
+////////////////////////////////////////////////////////////////////
+////              INAPPROPRIATE LANGUAGE RESPONSES              ////
+////////////////////////////////////////////////////////////////////
+
+
++ [*] (fuck|fucker|shit|damn|shut up|bitch) [*]
+- I notice some strong language in your message, which often indicates intense emotions. Strong feelings are a normal part of the human experience, though sometimes they can be overwhelming. Would you like to talk about what's triggering these intense emotions? If you're experiencing persistent anger, irritability, or emotional dysregulation, speaking with a mental health professional like a psychiatrist or therapist could provide helpful strategies and support. What's been going on that's bringing up these strong feelings?
+- I can tell you might be experiencing some intense emotions right now. It's completely normal to feel strong emotions, though sometimes they can be difficult to manage. Would it help to talk about what's behind these feelings? For some people, anger or frustration can be connected to stress, feeling unheard, or other underlying experiences. If strong emotions are a persistent challenge, speaking with a mental health professional can provide valuable support and strategies. Is there something specific that's been particularly frustrating lately?
+- Strong language often signals strong emotions, which are important to acknowledge. If you're feeling intensely frustrated, angry, or upset, these emotions are valid signals worth understanding. Would you like to share more about what's triggering these feelings? While occasional anger is normal, if you find yourself frequently overwhelmed by intense emotions, speaking with a psychiatrist or therapist can provide helpful strategies and support. They can offer approaches like cognitive behavioral therapy or dialectical behavior therapy that are effective for emotional regulation. What's been happening that's bringing up these intense feelings?
+
+
++ (fuck|fucker|shit|damn|shut up|bitch) 
+- I notice some strong language in your message, which often indicates intense emotions. Strong feelings are a normal part of the human experience, though sometimes they can be overwhelming. Would you like to talk about what's triggering these intense emotions? If you're experiencing persistent anger, irritability, or emotional dysregulation, speaking with a mental health professional like a psychiatrist or therapist could provide helpful strategies and support. What's been going on that's bringing up these strong feelings?
+- I can tell you might be experiencing some intense emotions right now. It's completely normal to feel strong emotions, though sometimes they can be difficult to manage. Would it help to talk about what's behind these feelings? For some people, anger or frustration can be connected to stress, feeling unheard, or other underlying experiences. If strong emotions are a persistent challenge, speaking with a mental health professional can provide valuable support and strategies. Is there something specific that's been particularly frustrating lately?
+- Strong language often signals strong emotions, which are important to acknowledge. If you're feeling intensely frustrated, angry, or upset, these emotions are valid signals worth understanding. Would you like to share more about what's triggering these feelings? While occasional anger is normal, if you find yourself frequently overwhelmed by intense emotions, speaking with a psychiatrist or therapist can provide helpful strategies and support. They can offer approaches like cognitive behavioral therapy or dialectical behavior therapy that are effective for emotional regulation. What's been happening that's bringing up these intense feelings?
+
+
+////////////////////////////////////////////////////////////////////
+////                     CLOSING RESPONSES                      ////
+////////////////////////////////////////////////////////////////////
+
++ (goodbye|good bye|bye|see ya)
+
+- Goodbye for now. Remember that taking care of your mental health is an ongoing journey, and I'm here whenever you need support or someone to talk to. Be gentle with yourself until we speak again.
+
+- I appreciate the time you've spent sharing with me today. Taking these moments to check in about your mental wellbeing is an important form of self-care. I'll be here when you need to talk again. Take care of yourself in the meantime.
+
+- Thank you for reaching out today. Each conversation about mental health helps reduce stigma and supports wellbeing. Remember that seeking support is a sign of strength, not weakness. I'm here whenever you need to continue our conversation.
+
+- Farewell for now. Remember that mental health has its ups and downs, and that's completely normal. I hope you'll take a moment today to acknowledge one thing you're doing well, no matter how small it might seem. I'll be here when you want to talk again.
+
+- Goodbye. I want you to know that reaching out for support, like you did today, is an important act of self-care. Be proud of that step. I'm here whenever you'd like to continue our conversation about your mental wellbeing.
